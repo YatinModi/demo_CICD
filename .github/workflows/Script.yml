@@ -33,7 +33,7 @@ jobs:
             CODE_SIGNING_ALLOWED=NO | xcpretty
             
             
-    - name: Build
+      - name: Build
         run: |
             IDEFileSystemSynchronizedGroupsAreEnabled=YES xcodebuild clean build
             -workspace MommyMap.xcworkspace \
