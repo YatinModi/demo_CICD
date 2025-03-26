@@ -21,7 +21,12 @@ jobs:
           rm -rf ~/Library/Developer/Xcode/DerivedData/*
     
       - name: Install CocoaPods dependencies
-        run: pod install
+        run: |
+            cd ${{ github.workspace }}
+            pod install --verbose
+            
+      - name: Check Installed Pods
+        run: cat Podfile.lock | grep UBottomSheet
 
       - name: Set Environment Variables
         run: |
