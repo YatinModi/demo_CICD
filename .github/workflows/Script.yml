@@ -31,9 +31,9 @@ jobs:
       - name: Check Pods Folder
         run: ls -R Pods | grep UBottomSheet || echo "UBottomSheet not found!"
 
-      - name: Set Environment Variables
-        run: |
-            echo "IDEFileSystemSynchronizedGroupsAreEnabled=NO" >> $GITHUB_ENV
+#      - name: Set Environment Variables
+#        run: |
+#            echo "IDEFileSystemSynchronizedGroupsAreEnabled=NO" >> $GITHUB_ENV
             
       - name: Decode and Install Certificates
         run: |
@@ -60,13 +60,13 @@ jobs:
 #            -destination "platform=iOS Simulator,name=iPhone 15 pro,OS=17.4" \
 #            CODE_SIGNING_ALLOWED=NO | xcpretty
             
-      - name: Set Framework Search Paths
-        run: |
-          xcodebuild clean build \
-            -workspace MommyMap.xcworkspace \
-            -scheme MommyMap \
-            -sdk iphoneos \
-            FRAMEWORK_SEARCH_PATHS="$(pwd)/Pods/**"
+#      - name: Set Framework Search Paths
+#        run: |
+#          xcodebuild clean build \
+#            -workspace MommyMap.xcworkspace \
+#            -scheme MommyMap \
+#            -sdk iphoneos \
+#            FRAMEWORK_SEARCH_PATHS="$(pwd)/Pods/**"
             
       - name: Build App
         run: |
