@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="srH-u5-FU0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="srH-u5-FU0">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -1897,62 +1897,6 @@
             <point key="canvasLocation" x="-612" y="643"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="3UJ-yd-IVd">
-            <size key="intrinsicContentSize" width="50" height="50"/>
-        </designable>
-        <designable name="4mg-tg-HTI">
-            <size key="intrinsicContentSize" width="67" height="30"/>
-        </designable>
-        <designable name="8wM-HU-7BU">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="Dg6-pw-r51">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="Icp-sS-cdi">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="Jwo-Tw-hwN">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="Kfg-Vg-ldf">
-            <size key="intrinsicContentSize" width="56" height="30"/>
-        </designable>
-        <designable name="Ltn-Zq-5Al">
-            <size key="intrinsicContentSize" width="58" height="30"/>
-        </designable>
-        <designable name="Pzh-Xl-ou0">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="SQx-10-GpM">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="Vb9-wH-htt">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="ZuI-jS-HDH">
-            <size key="intrinsicContentSize" width="76" height="37"/>
-        </designable>
-        <designable name="bxz-vM-pQX">
-            <size key="intrinsicContentSize" width="50" height="50"/>
-        </designable>
-        <designable name="gwb-EM-leH">
-            <size key="intrinsicContentSize" width="189" height="28"/>
-        </designable>
-        <designable name="i42-13-P3W">
-            <size key="intrinsicContentSize" width="114" height="30"/>
-        </designable>
-        <designable name="i9L-C3-rzI">
-            <size key="intrinsicContentSize" width="72" height="72"/>
-        </designable>
-        <designable name="qEZ-l1-0ib">
-            <size key="intrinsicContentSize" width="50" height="50"/>
-        </designable>
-        <designable name="qY9-fp-xre">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-    </designables>
     <resources>
         <image name="ArePlay" width="128" height="128"/>
         <image name="BigNaighborhoodHouse" width="48" height="48"/>
@@ -1982,7 +1926,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
