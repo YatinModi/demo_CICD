@@ -27,6 +27,9 @@ jobs:
             
       - name: Check Installed Pods
         run: cat Podfile.lock | grep UBottomSheet
+        
+      - name: Check Pods Folder
+        run: ls -R Pods | grep UBottomSheet || echo "UBottomSheet not found!"
 
       - name: Set Environment Variables
         run: |
@@ -57,14 +60,22 @@ jobs:
 #            -destination "platform=iOS Simulator,name=iPhone 15 pro,OS=17.4" \
 #            CODE_SIGNING_ALLOWED=NO | xcpretty
             
-      - name: Build
+      - name: Set Framework Search Paths
         run: |
-            xcodebuild clean build
+          xcodebuild clean build \
             -workspace MommyMap.xcworkspace \
             -scheme MommyMap \
-            -configuration Release \
-            -destination “generic/platform=iOS” \
-            CODE_SIGNING_ALLOWED=NO
+            -sdk iphoneos \
+            FRAMEWORK_SEARCH_PATHS="$(pwd)/Pods/**"
+            
+      - name: Build App
+        run: |
+          xcodebuild clean build \
+            -workspace MommyMap.xcworkspace \
+            -scheme MommyMap \
+            -sdk iphoneos \
+            -destination "generic/platform=iOS" \
+            -UseModernBuildSystem=YES
 
       - name: Archive App
         env:
