@@ -15,6 +15,10 @@ jobs:
 
       - name: Select Xcode Version
         run: sudo xcode-select -switch /Applications/Xcode_16.2.app/Contents/Developer
+        
+      - name: Clean Derived Data
+        run: |
+          rm -rf ~/Library/Developer/Xcode/DerivedData/*
     
       - name: Install dependencies
         run: pod install
@@ -38,10 +42,6 @@ jobs:
           # Move provisioning profile
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           mv profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
-
-      - name: Clean Derived Data
-        run: |
-          rm -rf ~/Library/Developer/Xcode/DerivedData/*
 
 #      - name: Run UI Tests
 #        run: |
