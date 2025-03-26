@@ -1,4 +1,3 @@
-
 name: iOS CI/CD
 
 on:
@@ -17,73 +16,36 @@ jobs:
       - name: Set Xcode Version
         run: sudo xcode-select -s /Applications/Xcode.app
 
-      - name: Set Environment Variable
-        run: |
-            echo "IDEFileSystemSynchronizedGroupsAreEnabled=NO" >> $GITHUB_ENV
-            export IDEFileSystemSynchronizedGroupsAreEnabled=NO
-            echo "IDEFileSystemSynchronizedGroupsAreEnabled=$IDEFileSystemSynchronizedGroupsAreEnabled"
-
       - name: Set System-wide Environment Variable
         run: |
-          sudo launchctl setenv IDEFileSystemSynchronizedGroupsAreEnabled NO
-          echo "IDEFileSystemSynchronizedGroupsAreEnabled=NO" >> $GITHUB_ENV
+          echo "export IDEFileSystemSynchronizedGroupsAreEnabled=YES" >> ~/.bash_profile
+          echo "export IDEFileSystemSynchronizedGroupsAreEnabled=YES" >> ~/.zshrc
+          echo "IDEFileSystemSynchronizedGroupsAreEnabled=YES" >> $GITHUB_ENV
+          sudo launchctl setenv IDEFileSystemSynchronizedGroupsAreEnabled YES
 
-      - name: Check Environment Variable
+      - name: Verify Environment Variable
         run: echo "IDEFileSystemSynchronizedGroupsAreEnabled=$IDEFileSystemSynchronizedGroupsAreEnabled"
-
-      - name: Clean Derived Data (to avoid cached issues)
-        run: |
-          rm -rf ~/Volumes/Getyoteam/DerivedData/*
 
       - name: Install dependencies
         run: pod install
 
-      - name: Debug Environment Before Running UI Tests
-        run: env | sort
-
-      - name: Run UI Tests
+      - name: Clean Derived Data
         run: |
-          export IDEFileSystemSynchronizedGroupsAreEnabled=NO
-          xcodebuild test \
-          -workspace MommyMap.xcworkspace \
-          -scheme MommyMapUITests \
-          -sdk iphonesimulator \
-          -destination 'platform=iOS Simulator,name=iPhone 11,OS=17.4' \
-          CODE_SIGNING_ALLOWED=NO | xcpretty
+          rm -rf ~/Library/Developer/Xcode/DerivedData/*
 
-      - name: Build
+      - name: Build and Archive
         run: |
-          env IDEFileSystemSynchronizedGroupsAreEnabled=NO xcodebuild clean build \
-          -workspace MommyMap.xcworkspace \
-          -scheme MommyMap \
-          -configuration Release \
-          -destination "generic/platform=iOS" \
-          CODE_SIGN_IDENTITY="" \
-          CODE_SIGNING_REQUIRED=NO \
-          CODE_SIGNING_ALLOWED=NO
-
-      - name: Set Environment in Shell
-        run: |
-          echo "export IDEFileSystemSynchronizedGroupsAreEnabled=NO" >> ~/.zshrc
-          source ~/.zshrc
-
-      - name: Archive
-        run: |
-          export IDEFileSystemSynchronizedGroupsAreEnabled=NO
-          xcodebuild archive \
-          -workspace MommyMap.xcworkspace \
-          -scheme MommyMap \
-          -configuration Release \
-          -archivePath $RUNNER_TEMP/MommyMap.xcarchive \
-          CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+          env IDEFileSystemSynchronizedGroupsAreEnabled=YES xcodebuild clean build \
+            -workspace MommyMap.xcworkspace \
+            -scheme MommyMap \
+            -configuration Release \
+            -destination "generic/platform=iOS" \
+            CODE_SIGNING_ALLOWED=NO
 
       - name: Export IPA
         run: |
-          export IDEFileSystemSynchronizedGroupsAreEnabled=NO
-          xcodebuild -exportArchive \
-          -archivePath $RUNNER_TEMP/MommyMap.xcarchive \
-          -exportPath $RUNNER_TEMP/export \
-          -exportOptionsPlist ExportOptions.plist \
-          CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
-
-
+          env IDEFileSystemSynchronizedGroupsAreEnabled=YES xcodebuild -exportArchive \
+            -archivePath $RUNNER_TEMP/MommyMap.xcarchive \
+            -exportPath $RUNNER_TEMP/export \
+            -exportOptionsPlist ExportOptions.plist \
+            CODE_SIGNING_ALLOWED=NO
