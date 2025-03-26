@@ -23,7 +23,7 @@ jobs:
         run: |
           rm -rf ~/Library/Developer/Xcode/DerivedData/*
 
-      - name: IDEFileSystemSynchronizedGroupsAreEnabled=YES Run UI Tests
+      - name: Run UI Tests
         run: |
            xcodebuild test \
             -workspace MommyMap.xcworkspace \
@@ -32,16 +32,16 @@ jobs:
             -destination ‘platform=iOS Simulator,name=iPhone 11,OS=17.4’ \
             CODE_SIGNING_ALLOWED=NO | xcpretty
 
-      - name: Build
+      - name: Archive App
         run: |
-            IDEFileSystemSynchronizedGroupsAreEnabled=YES xcodebuild clean build
+           xcodebuild archive \
             -workspace MommyMap.xcworkspace \
             -scheme MommyMap \
-            -configuration Release \
-            -destination "generic/platform=iOS" \
-            CODE_SIGNING_ALLOWED=NO
+            -sdk iphoneos \
+            -archivePath ${{ github.workspace }}/MommyMap.xcarchive \
+            CODE_SIGNING_ALLOWED=NO 
 
-      - name: IDEFileSystemSynchronizedGroupsAreEnabled=YES Export IPA
+      - name: Export IPA
         run: |
           env IDEFileSystemSynchronizedGroupsAreEnabled=NO xcodebuild -exportArchive \
             -archivePath $RUNNER_TEMP/MommyMap.xcarchive \
