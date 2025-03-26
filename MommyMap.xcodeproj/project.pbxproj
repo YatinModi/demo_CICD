@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -49,6 +49,16 @@
 		C403D6E8E6B9F2F04C76B50E /* Pods_MommyMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122419A343DD27CE16FC5D74 /* Pods_MommyMap.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		20A6A5D12D93BE1300228234 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20AB020D2CA57777006DD740 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20AB02142CA57777006DD740;
+			remoteInfo = MommyMap;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		122419A343DD27CE16FC5D74 /* Pods_MommyMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MommyMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2002FDAF2CC0D38100A2685C /* OutlinedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlinedLabel.swift; sourceTree = "<group>"; };
@@ -63,6 +73,7 @@
 		2099736A2CB944C6002B1AB3 /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLayer.swift; sourceTree = "<group>"; };
 		20A0D8E12D63352A00AA61CC /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		20A5D02C2CA588D9007644F4 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		20A6A5CB2D93BE1300228234 /* MommyMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MommyMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20AB02152CA57777006DD740 /* MommyMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MommyMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20AB02182CA57777006DD740 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20AB021F2CA57777006DD740 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -96,7 +107,18 @@
 		E162F6F4FEB2A1EDB21852BE /* Pods-MommyMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MommyMap.release.xcconfig"; path = "Target Support Files/Pods-MommyMap/Pods-MommyMap.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		20A6A5CC2D93BE1300228234 /* MommyMapUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = MommyMapUITests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		20A6A5C82D93BE1300228234 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		20AB02122CA57777006DD740 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -137,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				20AB02172CA57777006DD740 /* MommyMap */,
+				20A6A5CC2D93BE1300228234 /* MommyMapUITests */,
 				20AB02162CA57777006DD740 /* Products */,
 				1CD1749280C591712E47825F /* Pods */,
 				F591FAE4FFE48CC1A8A54280 /* Frameworks */,
@@ -147,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				20AB02152CA57777006DD740 /* MommyMap.app */,
+				20A6A5CB2D93BE1300228234 /* MommyMapUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -233,6 +257,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		20A6A5CA2D93BE1300228234 /* MommyMapUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20A6A5D52D93BE1300228234 /* Build configuration list for PBXNativeTarget "MommyMapUITests" */;
+			buildPhases = (
+				20A6A5C72D93BE1300228234 /* Sources */,
+				20A6A5C82D93BE1300228234 /* Frameworks */,
+				20A6A5C92D93BE1300228234 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20A6A5D22D93BE1300228234 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				20A6A5CC2D93BE1300228234 /* MommyMapUITests */,
+			);
+			name = MommyMapUITests;
+			packageProductDependencies = (
+			);
+			productName = MommyMapUITests;
+			productReference = 20A6A5CB2D93BE1300228234 /* MommyMapUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		20AB02142CA57777006DD740 /* MommyMap */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20AB02292CA57778006DD740 /* Build configuration list for PBXNativeTarget "MommyMap" */;
@@ -260,9 +307,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1530;
+				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
+					20A6A5CA2D93BE1300228234 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 20AB02142CA57777006DD740;
+					};
 					20AB02142CA57777006DD740 = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -284,11 +335,19 @@
 			projectRoot = "";
 			targets = (
 				20AB02142CA57777006DD740 /* MommyMap */,
+				20A6A5CA2D93BE1300228234 /* MommyMapUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		20A6A5C92D93BE1300228234 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		20AB02132CA57777006DD740 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -371,6 +430,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		20A6A5C72D93BE1300228234 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		20AB02112CA57777006DD740 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -408,6 +474,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		20A6A5D22D93BE1300228234 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20AB02142CA57777006DD740 /* MommyMap */;
+			targetProxy = 20A6A5D12D93BE1300228234 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		20AB021E2CA57777006DD740 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -428,6 +502,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		20A6A5D32D93BE1300228234 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SWLFCA4VWV;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = gyt.MommyMapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MommyMap;
+			};
+			name = Debug;
+		};
+		20A6A5D42D93BE1300228234 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SWLFCA4VWV;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = gyt.MommyMapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MommyMap;
+			};
+			name = Release;
+		};
 		20AB02272CA57778006DD740 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -620,6 +730,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		20A6A5D52D93BE1300228234 /* Build configuration list for PBXNativeTarget "MommyMapUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20A6A5D32D93BE1300228234 /* Debug */,
+				20A6A5D42D93BE1300228234 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		20AB02102CA57777006DD740 /* Build configuration list for PBXProject "MommyMap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
