@@ -23,8 +23,17 @@ jobs:
             export IDEFileSystemSynchronizedGroupsAreEnabled=NO
             echo "IDEFileSystemSynchronizedGroupsAreEnabled=$IDEFileSystemSynchronizedGroupsAreEnabled"
 
+      - name: Set System-wide Environment Variable
+        run: |
+          sudo launchctl setenv IDEFileSystemSynchronizedGroupsAreEnabled NO
+          echo "IDEFileSystemSynchronizedGroupsAreEnabled=NO" >> $GITHUB_ENV
+
       - name: Check Environment Variable
         run: echo "IDEFileSystemSynchronizedGroupsAreEnabled=$IDEFileSystemSynchronizedGroupsAreEnabled"
+
+      - name: Clean Derived Data (to avoid cached issues)
+        run: |
+          rm -rf ~/Volumes/Getyoteam/DerivedData/*
 
       - name: Install dependencies
         run: pod install
