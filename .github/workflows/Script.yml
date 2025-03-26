@@ -25,6 +25,6 @@ jobs:
             export IDEFileSystemSynchronizedGroupsAreEnabled=NO
             xcodebuild test -workspace MommyMap.xcworkspace \
             -scheme MommyMapUITests \
-            -destination “platform=iOS Simulator,name=iPhone 15” \
+            -destination "platform=iOS Simulator,name=iPhone 15 Pro" \
             -only-testing:MommyMapUITests
 
