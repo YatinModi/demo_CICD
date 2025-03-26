@@ -18,6 +18,10 @@ jobs:
 
       - name: Install dependencies
         run: pod install
+        
+      - name: Set Environment Variables
+        run: |
+            echo "IDEFileSystemSynchronizedGroupsAreEnabled=YES" >> $GITHUB_ENV
 
       - name: Clean Derived Data
         run: |
