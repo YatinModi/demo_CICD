@@ -18,10 +18,10 @@ jobs:
 
       - name: Set System-wide Environment Variable
         run: |
-          echo "export IDEFileSystemSynchronizedGroupsAreEnabled=YES" >> ~/.bash_profile
-          echo "export IDEFileSystemSynchronizedGroupsAreEnabled=YES" >> ~/.zshrc
+          echo "export IDEFileSystemSynchronizedGroupsAreEnabled=NO" >> ~/.bash_profile
+          echo "export IDEFileSystemSynchronizedGroupsAreEnabled=NO" >> ~/.zshrc
           echo "IDEFileSystemSynchronizedGroupsAreEnabled=YES" >> $GITHUB_ENV
-          sudo launchctl setenv IDEFileSystemSynchronizedGroupsAreEnabled YES
+          sudo launchctl setenv IDEFileSystemSynchronizedGroupsAreEnabled NO
 
       - name: Verify Environment Variable
         run: echo "IDEFileSystemSynchronizedGroupsAreEnabled=$IDEFileSystemSynchronizedGroupsAreEnabled"
@@ -54,7 +54,7 @@ jobs:
 
       - name: Export IPA
         run: |
-          env IDEFileSystemSynchronizedGroupsAreEnabled=YES xcodebuild -exportArchive \
+          env IDEFileSystemSynchronizedGroupsAreEnabled=NO xcodebuild -exportArchive \
             -archivePath $RUNNER_TEMP/MommyMap.xcarchive \
             -exportPath $RUNNER_TEMP/export \
             -exportOptionsPlist ExportOptions.plist \
