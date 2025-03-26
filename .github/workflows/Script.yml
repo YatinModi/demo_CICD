@@ -20,9 +20,9 @@ jobs:
         run: |
           rm -rf ~/Library/Developer/Xcode/DerivedData/*
     
-      - name: Install dependencies
+      - name: Install CocoaPods dependencies
         run: pod install
-        
+
       - name: Set Environment Variables
         run: |
             echo "IDEFileSystemSynchronizedGroupsAreEnabled=NO" >> $GITHUB_ENV
