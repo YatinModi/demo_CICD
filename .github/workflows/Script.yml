@@ -33,6 +33,16 @@ jobs:
         run: |
           rm -rf ~/Library/Developer/Xcode/DerivedData/*
 
+      - name: Run UI Tests
+        run: |
+           export IDEFileSystemSynchronizedGroupsAreEnabled=NO
+           xcodebuild test \
+            -workspace MommyMap.xcworkspace \
+           -scheme MommyMapUITests \
+            -sdk iphonesimulator \
+            -destination ‘platform=iOS Simulator,name=iPhone 11,OS=17.4’ \
+            CODE_SIGNING_ALLOWED=NO | xcpretty
+
       - name: Build and Archive
         run: |
           env IDEFileSystemSynchronizedGroupsAreEnabled=YES xcodebuild clean build \
