@@ -23,7 +23,7 @@ jobs:
         run: |
           rm -rf ~/Library/Developer/Xcode/DerivedData/*
 
-      - name: Run UI Tests
+      - name: IDEFileSystemSynchronizedGroupsAreEnabled=YES Run UI Tests
         run: |
            xcodebuild test \
             -workspace MommyMap.xcworkspace \
@@ -34,14 +34,14 @@ jobs:
 
       - name: Build
         run: |
-            xcodebuild clean build
+            IDEFileSystemSynchronizedGroupsAreEnabled=YES xcodebuild clean build
             -workspace MommyMap.xcworkspace \
             -scheme MommyMap \
             -configuration Release \
             -destination "generic/platform=iOS" \
             CODE_SIGNING_ALLOWED=NO
 
-      - name: Export IPA
+      - name: IDEFileSystemSynchronizedGroupsAreEnabled=YES Export IPA
         run: |
           env IDEFileSystemSynchronizedGroupsAreEnabled=NO xcodebuild -exportArchive \
             -archivePath $RUNNER_TEMP/MommyMap.xcarchive \
