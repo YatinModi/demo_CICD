@@ -33,13 +33,15 @@ jobs:
             CODE_SIGNING_ALLOWED=NO | xcpretty
 
       - name: Archive App
+        env:
+          IDEFileSystemSynchronizedGroupsAreEnabled: YES
         run: |
-           xcodebuild archive \
-            -workspace MommyMap.xcworkspace \
-            -scheme MommyMap \
-            -sdk iphoneos \
-            -archivePath ${{ github.workspace }}/MommyMap.xcarchive \
-            CODE_SIGNING_ALLOWED=NO 
+          xcodebuild archive \
+          -workspace MommyMap.xcworkspace \
+          -scheme MommyMap \
+          -sdk iphoneos \
+          -archivePath ${{ github.workspace }}/MommyMap.xcarchive \
+          CODE_SIGNING_ALLOWED=NO
 
       - name: Export IPA
         run: |
