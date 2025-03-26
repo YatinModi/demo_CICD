@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		200C45632CE4A68300410641 /* PrivacyPolicy.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 200C45622CE4A68300410641 /* PrivacyPolicy.pdf */; };
 		200FE9F22D5C598000E02944 /* Comfortaa-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 200FE9F02D5C598000E02944 /* Comfortaa-SemiBold.ttf */; };
 		200FE9F32D5C598000E02944 /* Comfortaa-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 200FE9F12D5C598000E02944 /* Comfortaa-Medium.ttf */; };
+		2027671E2D942B01004BBA83 /* ExportOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2027671D2D942B01004BBA83 /* ExportOptions.plist */; };
 		2039A77C2CB937E00056DC69 /* TosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2039A77B2CB937E00056DC69 /* TosVC.swift */; };
 		206479912CE7158D00B37B64 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206479902CE7158D00B37B64 /* SplashVC.swift */; };
 		209973682CB93EA0002B1AB3 /* NVActivityIndicatorViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209973672CB93EA0002B1AB3 /* NVActivityIndicatorViewable.swift */; };
@@ -66,6 +67,7 @@
 		200FE9F02D5C598000E02944 /* Comfortaa-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-SemiBold.ttf"; sourceTree = "<group>"; };
 		200FE9F12D5C598000E02944 /* Comfortaa-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Medium.ttf"; sourceTree = "<group>"; };
 		2023F4C02D98A016C88F181A /* Pods-MommyMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MommyMap.debug.xcconfig"; path = "Target Support Files/Pods-MommyMap/Pods-MommyMap.debug.xcconfig"; sourceTree = "<group>"; };
+		2027671D2D942B01004BBA83 /* ExportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ExportOptions.plist; sourceTree = "<group>"; };
 		2039A77B2CB937E00056DC69 /* TosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TosVC.swift; sourceTree = "<group>"; };
 		206479902CE7158D00B37B64 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		209973672CB93EA0002B1AB3 /* NVActivityIndicatorViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorViewable.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				20AB021E2CA57777006DD740 /* Main.storyboard */,
 				20AB02212CA57778006DD740 /* Assets.xcassets */,
 				20AB02232CA57778006DD740 /* LaunchScreen.storyboard */,
+				2027671D2D942B01004BBA83 /* ExportOptions.plist */,
 				20AB02262CA57778006DD740 /* Info.plist */,
 				20C3CCB62CA57A6900D0A484 /* GoogleService-Info.plist */,
 				20A0D8E12D63352A00AA61CC /* PrivacyInfo.xcprivacy */,
@@ -363,6 +366,7 @@
 				20FD54132CABDF6E00FE91AF /* Comfortaa-Regular.ttf in Resources */,
 				20AB02202CA57777006DD740 /* Base in Resources */,
 				200C45632CE4A68300410641 /* PrivacyPolicy.pdf in Resources */,
+				2027671E2D942B01004BBA83 /* ExportOptions.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
