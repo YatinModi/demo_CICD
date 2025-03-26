@@ -54,7 +54,7 @@ jobs:
             
       - name: Build
         run: |
-            IDEFileSystemSynchronizedGroupsAreEnabled=YES xcodebuild clean build
+            xcodebuild clean build
             -workspace MommyMap.xcworkspace \
             -scheme MommyMap \
             -configuration Release \
@@ -75,7 +75,7 @@ jobs:
 
       - name: Export IPA
         run: |
-          env IDEFileSystemSynchronizedGroupsAreEnabled=NO xcodebuild -exportArchive \
+          xcodebuild -exportArchive \
             -archivePath $RUNNER_TEMP/MommyMap.xcarchive \
             -exportPath $RUNNER_TEMP/export \
             -exportOptionsPlist ExportOptions.plist \
