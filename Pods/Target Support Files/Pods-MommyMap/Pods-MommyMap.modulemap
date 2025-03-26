@@ -1,0 +1,6 @@
+framework module Pods_MommyMap {
+  umbrella header "Pods-MommyMap-umbrella.h"
+
+  export *
+  module * { export * }
+}
