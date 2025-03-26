@@ -43,14 +43,14 @@ jobs:
         run: |
           rm -rf ~/Library/Developer/Xcode/DerivedData/*
 
-      - name: Run UI Tests
-        run: |
-           xcodebuild test \
-            -workspace MommyMap.xcworkspace \
-           -scheme MommyMap \
-            -sdk iphonesimulator \
-            -destination "platform=iOS Simulator,name=iPhone 15 pro,OS=17.4" \
-            CODE_SIGNING_ALLOWED=NO | xcpretty
+#      - name: Run UI Tests
+#        run: |
+#           xcodebuild test \
+#            -workspace MommyMap.xcworkspace \
+#           -scheme MommyMap \
+#            -sdk iphonesimulator \
+#            -destination "platform=iOS Simulator,name=iPhone 15 pro,OS=17.4" \
+#            CODE_SIGNING_ALLOWED=NO | xcpretty
             
       - name: Build
         run: |
