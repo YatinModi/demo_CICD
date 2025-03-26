@@ -13,15 +13,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set Xcode Version
-        run: sudo xcode-select -s /Applications/Xcode.app
-
+      - name: Select Xcode Version
+        run: sudo xcode-select -switch /Applications/Xcode_16.2.app/Contents/Developer
+    
       - name: Install dependencies
         run: pod install
         
       - name: Set Environment Variables
         run: |
-            echo "IDEFileSystemSynchronizedGroupsAreEnabled=YES" >> $GITHUB_ENV
+            echo "IDEFileSystemSynchronizedGroupsAreEnabled=NO" >> $GITHUB_ENV
 
       - name: Clean Derived Data
         run: |
@@ -37,15 +37,8 @@ jobs:
             CODE_SIGNING_ALLOWED=NO | xcpretty
             
             
-      - name: Build
-        run: |
-            IDEFileSystemSynchronizedGroupsAreEnabled=YES xcodebuild clean build
-            -workspace MommyMap.xcworkspace \
-            -scheme MommyMap \
-            -configuration Release \
-            -destination “generic/platform=iOS” \
-            CODE_SIGNING_ALLOWED=NO
-            
+      - name: Build App
+        run: xcodebuild clean build -workspace MommyMap.xcworkspace -scheme MommyMap -configuration Release -destination "generic/platform=iOS"
 
       - name: Archive App
         env:
@@ -56,7 +49,7 @@ jobs:
           -scheme MommyMap \
           -sdk iphoneos \
           -archivePath ${{ github.workspace }}/MommyMap.xcarchive \
-          CODE_SIGNING_ALLOWED=NO
+          CODE_SIGNING_ALLOWED=NO | xcpretty
 
       - name: Export IPA
         run: |
@@ -64,4 +57,4 @@ jobs:
             -archivePath $RUNNER_TEMP/MommyMap.xcarchive \
             -exportPath $RUNNER_TEMP/export \
             -exportOptionsPlist ExportOptions.plist \
-            CODE_SIGNING_ALLOWED=NO
+            CODE_SIGNING_ALLOWED=NO | xcpretty
