@@ -51,14 +51,14 @@ jobs:
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           mv profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
 
-#      - name: Run UI Tests
-#        run: |
-#           xcodebuild test \
-#            -workspace MommyMap.xcworkspace \
-#           -scheme MommyMap \
-#            -sdk iphonesimulator \
-#            -destination "platform=iOS Simulator,name=iPhone 15 pro,OS=17.4" \
-#            CODE_SIGNING_ALLOWED=NO | xcpretty
+      - name: Run UI Tests
+        run: |
+           xcodebuild test \
+            -workspace MommyMap.xcworkspace \
+           -scheme MommyMapUITests \
+            -sdk iphonesimulator \
+            -destination "platform=iOS Simulator,name=iPhone 15 pro,OS=17.4" \
+            CODE_SIGNING_ALLOWED=NO | xcpretty
             
 #      - name: Set Framework Search Paths
 #        run: |
@@ -68,14 +68,14 @@ jobs:
 #            -sdk iphoneos \
 #            FRAMEWORK_SEARCH_PATHS="$(pwd)/Pods/**"
             
-      - name: Build App
-        run: |
-          xcodebuild clean build \
-            -workspace MommyMap.xcworkspace \
-            -scheme MommyMap \
-            -sdk iphoneos \
-            -destination "generic/platform=iOS" \
-            -UseModernBuildSystem=YES
+#      - name: Build App
+#        run: |
+#          xcodebuild clean build \
+#            -workspace MommyMap.xcworkspace \
+#            -scheme MommyMap \
+#            -sdk iphoneos \
+#            -destination "generic/platform=iOS" \
+#            -UseModernBuildSystem=YES
 
 #      - name: Archive App
 #        env:

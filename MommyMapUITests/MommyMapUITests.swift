@@ -28,6 +28,9 @@ final class MommyMapUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
+        let result = 2 + 2
+        XCTAssertEqual(result, 4, "Addition should be correct")
+
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
