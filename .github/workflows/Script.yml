@@ -52,23 +52,23 @@ jobs:
           mv profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
           
           
-      - name: Run Specific UI Test
-        run: |
-          xcodebuild test \
-            -workspace MommyMap.xcworkspace \
-            -scheme MommyMapUITests \
-            -destination "platform=iOS Simulator,name=iPhone 15 Pro,OS=17.4" \
-            -only-testing:MommyMapUITests/MommyMapUITests/testExample \
-            -skip-testing:MommyMap
-            
-#      - name: Run UI Tests
+#      - name: Run Specific UI Test
 #        run: |
-#           xcodebuild test \
+#          xcodebuild test \
 #            -workspace MommyMap.xcworkspace \
-#           -scheme MommyMapUITests \
-#            -sdk iphonesimulator \
-#            -destination "platform=iOS Simulator,name=iPhone 15 pro,OS=17.4" \
-#            CODE_SIGNING_ALLOWED=NO | xcpretty
+#            -scheme MommyMapUITests \
+#            -destination "platform=iOS Simulator,name=iPhone 15 Pro,OS=17.4" \
+#            -only-testing:MommyMapUITests/MommyMapUITests/testExample \
+#            -skip-testing:MommyMap
+            
+      - name: Run UI Tests
+        run: |
+           xcodebuild test \
+            -workspace MommyMap.xcworkspace \
+           -scheme MommyMapUITests \
+            -sdk iphonesimulator \
+            -destination "platform=iOS Simulator,name=iPhone 15 pro,OS=17.4" \
+            CODE_SIGNING_ALLOWED=NO | xcpretty
 #            -enableCodeCoverage YES
             
 #      - name: Set Framework Search Paths
