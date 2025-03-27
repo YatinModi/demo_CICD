@@ -51,7 +51,21 @@ jobs:
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           mv profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
           
+      - name: Tests and Build App
+        run: |
+            xcodebuild clean build \
+            -workspace MommyMap.xcworkspace \
+            -scheme MommyMap \
+            -sdk iphoneos \
+            -destination "generic/platform=iOS" \
+            -UseModernBuildSystem=YES
           
+      - name: Boot and Reset Simulator
+        run: |
+          xcrun simctl shutdown all
+          xcrun simctl erase all
+          xcrun simctl boot "iPhone 15 Pro"
+
       - name: Run Specific UI Test
         run: |
             xcodebuild test \

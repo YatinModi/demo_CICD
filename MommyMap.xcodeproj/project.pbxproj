@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -49,6 +49,16 @@
 		20FD54152CABDF6E00FE91AF /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20FD54122CABDF6E00FE91AF /* Comfortaa-Light.ttf */; };
 		C403D6E8E6B9F2F04C76B50E /* Pods_MommyMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122419A343DD27CE16FC5D74 /* Pods_MommyMap.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		208F868F2D954B4500458126 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20AB020D2CA57777006DD740 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20AB02142CA57777006DD740;
+			remoteInfo = MommyMap;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		122419A343DD27CE16FC5D74 /* Pods_MommyMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MommyMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,6 +271,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				208F86902D954B4500458126 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				20A6A5CC2D93BE1300228234 /* MommyMapUITests */,
@@ -468,6 +479,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		208F86902D954B4500458126 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20AB02142CA57777006DD740 /* MommyMap */;
+			targetProxy = 208F868F2D954B4500458126 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		20AB021E2CA57777006DD740 /* Main.storyboard */ = {
