@@ -51,14 +51,14 @@ jobs:
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           mv profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
 
-#      - name: Run UI Tests
-#        run: |
-#           xcodebuild test \
-#            -workspace MommyMap.xcworkspace \
-#           -scheme MommyMap \
-#            -sdk iphonesimulator \
-#            -destination "platform=iOS Simulator,name=iPhone 15 pro,OS=17.4" \
-#            CODE_SIGNING_ALLOWED=NO | xcpretty
+      - name: Run UI Tests
+        run: |
+           xcodebuild test \
+            -workspace MommyMap.xcworkspace \
+           -scheme MommyMap \
+            -sdk iphonesimulator \
+            -destination "platform=iOS Simulator,name=iPhone 15 pro,OS=17.4" \
+            CODE_SIGNING_ALLOWED=NO | xcpretty
             
 #      - name: Set Framework Search Paths
 #        run: |
@@ -77,22 +77,22 @@ jobs:
             -destination "generic/platform=iOS" \
             -UseModernBuildSystem=YES
 
-      - name: Archive App
-        env:
-            IDEFileSystemSynchronizedGroupsAreEnabled: NO
-        run: |
-          xcodebuild archive \
-          -workspace MommyMap.xcworkspace \
-          -scheme MommyMap \
-          -sdk iphoneos \
-          -archivePath ${{ github.workspace }}/MommyMap.xcarchive \
-          -allowProvisioningUpdates \
-          CODE_SIGNING_ALLOWED=NO | xcpretty
+#      - name: Archive App
+#        env:
+#            IDEFileSystemSynchronizedGroupsAreEnabled: NO
+#        run: |
+#          xcodebuild archive \
+#          -workspace MommyMap.xcworkspace \
+#          -scheme MommyMap \
+#          -sdk iphoneos \
+#          -archivePath ${{ github.workspace }}/MommyMap.xcarchive \
+#          -allowProvisioningUpdates \
+#          CODE_SIGNING_ALLOWED=NO | xcpretty
 
-      - name: Export IPA
-        run: |
-          xcodebuild -exportArchive \
-            -archivePath $RUNNER_TEMP/MommyMap.xcarchive \
-            -exportPath $RUNNER_TEMP/export \
-            -exportOptionsPlist ExportOptions.plist \
-            CODE_SIGNING_ALLOWED=NO | xcpretty
+#      - name: Export IPA
+#        run: |
+#          xcodebuild -exportArchive \
+#            -archivePath $RUNNER_TEMP/MommyMap.xcarchive \
+#            -exportPath $RUNNER_TEMP/export \
+#            -exportOptionsPlist ExportOptions.plist \
+#            CODE_SIGNING_ALLOWED=NO | xcpretty
