@@ -5,7 +5,7 @@
 //  Created by getyoteam solution llp on 26/09/24.
 //
 
-import UIKit
+import UIKit 
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
